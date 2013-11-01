@@ -8,7 +8,7 @@
 	<link href="css/style.css" rel="stylesheet">
 
 </head> 
-<body> 
+<body onload="javascript:anas()"> 
 
 <div data-role="page">
 
@@ -39,8 +39,8 @@
 	<script src="js/jquery.mobile-1.2.1.min.js"></script>
 
      <script>
-     	$(document).bind('pageinit', function(){
-     			$('#movie').html('hiiiiiiiiiiiiiiiiiii);
+     	function anas(){
+     			$('#movie').html('hiiiiiiiiiiiiiiiiiii');
 			$.ajax({
 				type: "GET",
 				url: "http://gdata.youtube.com/feeds/api/videos?q=kids",
@@ -54,7 +54,7 @@
 					});
 				}
 			});
-		});
+		}
      </script>
 </body>
 
