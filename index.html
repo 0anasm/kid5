@@ -42,7 +42,7 @@
      	$(document).bind('pageinit', function(){
 			$.ajax({
 				type: "GET",
-				url: "http://gdata.youtube.com/feeds/api/videos?q=برنامج الأطفال",
+				url: "http://gdata.youtube.com/feeds/api/videos?q=kids",
 				dataType: "xml",
 				success: function(xml) {
 					$(xml).find('entry').each(function(){
