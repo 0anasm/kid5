@@ -8,7 +8,7 @@
 	<link href="css/style.css" rel="stylesheet">
 
 </head> 
-<body onload="javascript:anas()"> 
+<body> 
 
 <div data-role="page">
 
@@ -18,15 +18,15 @@
 
 	<div data-role="content">
 		<ul data-role="listview" id="videos-list">
-			<!-- <li><a href="acura.html"><img src="img/music.png"/>فيدوي</a></li>-->
+			<!-- <li><a rel="external" href="acura.html"><img src="img/music.png"/>فيدوي</a></li>-->
 		</ul>
 	</div><!-- /content -->
 	
 	<div data-position="fixed" data-role="footer" class="nav-glyphish-example">
 		<div data-role="navbar" class="nav-glyphish-example" data-grid="d">
 		<ul>
-			<li><a rel="external" href="index.html" id="movie" data-icon="custom" class="ui-btn-active ui-state-persist">برنامج أطفال</a></li>
-			<li><a rel="external" href="cartoon.html" id="cartoon" data-icon="custom">كرتون</a></li>
+			<li><a rel="external" href="index.html" id="movie" data-icon="custom">برنامج أطفال</a></li>
+			<li><a rel="external" href="cartoon.html" id="cartoon" data-icon="custom" class="ui-btn-active ui-state-persist">كرتون</a></li>
 			<li><a rel="external" href="anasheed.html" id="music" data-icon="custom">أناشيد</a></li>
 			<li><a rel="external" href="janna.html" id="janna" data-icon="custom">طيور الجنة</a></li>
 			<li><a rel="external" href="info.html" id="info" data-icon="custom">عن البرنامج</a></li>
@@ -36,14 +36,12 @@
 
 </div><!-- /page -->
 	<script src="js/jquery-1.8.3.min.js"></script>
-	<script src="js/jquery.mobile-1.2.1.min.js"></script>
-
      <script>
-     	function anas(){
-     			$('#movie').html('hiiiiiiiiiiiiiiiiiii');
+     	$(document).ready(function(){
+			$('#movie').html('do');
 			$.ajax({
 				type: "GET",
-				url: "http://gdata.youtube.com/feeds/api/videos?q=kids",
+				url: "http://gdata.youtube.com/feeds/api/videos?q=أفلام كرتون للأطفال",
 				dataType: "xml",
 				success: function(xml) {
 					$(xml).find('entry').each(function(){
@@ -54,8 +52,10 @@
 					});
 				}
 			});
-		}
+		});
      </script>
+	<script src="js/jquery.mobile-1.2.1.min.js"></script>
+
 </body>
 
 </html>
