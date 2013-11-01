@@ -9,7 +9,7 @@
 	<script src="js/jquery-1.8.3.min.js"></script>
      <script>
      	$(window).load(function(){
-			$('#movie').html('do');
+			$('#movie').html('anas1');
 			$.ajax({
 				type: "GET",
 				url: "http://gdata.youtube.com/feeds/api/videos?q=أفلام كرتون للأطفال",
@@ -23,7 +23,8 @@
 					});
 				},
 				complete: function() {
-							$('#list-id').listview('refresh');
+							$('#videos-list').listview('refresh');
+							$('#movie').html('anas4');
 						} 
     			});
 		});
@@ -57,7 +58,28 @@
 	</div>
 
 </div><!-- /page -->
-
+     <script>
+     	$(window).load(function(){
+			$('#movie').html('anas');
+			$.ajax({
+				type: "GET",
+				url: "http://gdata.youtube.com/feeds/api/videos?q=أفلام كرتون للأطفال",
+				dataType: "xml",
+				success: function(xml) {
+					$(xml).find('entry').each(function(){
+						var id = $(this).find('id').text().split('videos/')[1];
+						var title = $(this).find('title').text();
+						var url = $(this).find('media\\:content, media\\:group').eq(2).attr('url');
+						$('<li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="c" class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-li-has-thumb ui-li-last ui-btn-up-c"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="' + url + '" class="ui-link-inherit"><img src="http://i.ytimg.com/vi/' + id + '/0.jpg" class="ui-li-thumb">' + title + '</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>').appendTo('#videos-list');
+					});
+				},
+				complete: function() {
+							$('#videos-list').listview('refresh');
+							$('#movie').html('anas3');
+						} 
+    			});
+		});
+     </script>
 
 </body>
 
