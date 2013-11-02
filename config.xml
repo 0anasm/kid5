@@ -1,5 +1,3 @@
-/home/anas/Documents/kidsyoutube.png
-
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
@@ -74,6 +72,7 @@
 
         Otherwise, you can specify specific domains:
     -->
+    <access origin="*" />
     <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
     <!--
         <access origin="http://phonegap.com" />                    - allow any secure requests to http://phonegap.com/
@@ -82,3 +81,16 @@
     -->
 
 </widget>
+<cross-domain-policy>
+    <!-- Read this: www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html -->
+
+    <!-- Most restrictive policy: -->
+    <site-control permitted-cross-domain-policies="none"/>
+
+    <!-- Least restrictive policy: -->
+    <!--
+    <site-control permitted-cross-domain-policies="all"/>
+    <allow-access-from domain="*" to-ports="*" secure="false"/>
+    <allow-http-request-headers-from domain="*" headers="*" secure="false"/>
+    -->
+</cross-domain-policy>
